@@ -1,27 +1,27 @@
-import React from 'react';
-import { Typography, Stack } from '@mui/material';
-import './App.css';
-import { JavaScriptLogo } from './JavaScriptLogo';
-import { Start } from './Start';
+import { useState } from 'react';
+import { Todos } from './components/Todos';
 
-function App() {
-  return (
-    <React.Fragment>
-      <Stack
-        direction="row"
-        gap={2}
-        alignItems="center"
-        justifyContent="center"
-      >
-        <JavaScriptLogo />
-        <Typography variant="h2" component="h1">
-          JavaScript Quiz
-        </Typography>
-      </Stack>
+const mockTodos = [
+  {
+    id: 1,
+    title: 'todo 1',
+    completed: false,
+  },
+  {
+    id: 2,
+    title: 'todo 2',
+    completed: false,
+  },
+  {
+    id: 3,
+    title: 'todo 3',
+    completed: false,
+  },
+];
 
-      <Start />
-    </React.Fragment>
-  );
-}
+const App = (): JSX.Element => {
+  const [todos, setTodos] = useState(mockTodos);
+  return <Todos todos={todos} />;
+};
 
 export default App;
