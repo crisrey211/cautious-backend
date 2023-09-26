@@ -21,7 +21,11 @@ const mockTodos = [
 
 const App = (): JSX.Element => {
   const [todos, setTodos] = useState(mockTodos);
-  return <Todos todos={todos} />;
+  return (
+    <div className="todoapp">
+      <Todos todos={todos} />
+    </div>
+  );
 };
 
 export default App;
