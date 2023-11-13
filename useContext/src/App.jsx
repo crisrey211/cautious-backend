@@ -1,20 +1,18 @@
 import './App.css'
 import { Filters } from './components/Filters'
 import { Users } from './components/Users'
-import { FiltersProvider } from './context/filters'
 import { useFetch } from './useFetch'
 
 function App() {
 
-  const { count } = useFetch("https://reqres.in/api/users")
-
+  const { initialUsers } = useFetch("https://reqres.in/api/users")
 
   return (
-    <FiltersProvider>
+    <div style={{ display: "flex" }}>
+      <Users users={initialUsers} />
       <Filters />
-      <Users count={count} />
-    </FiltersProvider>
+    </div>
   )
 }
-
 export default App
+

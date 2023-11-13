@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 
 export function useFetch(url) {
-    const [count, setCount] = useState("")
+    const [initialUsers, setInitialUsers] = useState("")
     useEffect(()=>{
 
     async function getData() {
@@ -12,14 +12,13 @@ export function useFetch(url) {
                 throw new Error("No se pudo obtener la información.");
             }
             const data = await response.json()
-            setCount(data)
+            setInitialUsers(data)
         } catch (error) {
             console.error(error)
         }
     }
-
         getData()
     },[])
 
-    return {count}
+    return { initialUsers}
 }

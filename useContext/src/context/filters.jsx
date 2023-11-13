@@ -6,7 +6,8 @@ export const FilterContext = createContext()
 // 2º Crear el Provider, para proveer el contexto
 export function FiltersProvider({ children }) {
     const [filters, setFilters] = useState({
-        nombre: ''
+        nombre: '',
+        id: ''
     })
 
     return (
