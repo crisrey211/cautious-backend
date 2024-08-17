@@ -1,7 +1,8 @@
-process.loadEnvFile()
+/* process.loadEnvFile() */
 import app from './app.js'
+import { PORT } from './config.js'
 import { connectDB } from './db.js'
 
 connectDB()
-app.listen(process.env.PORT)
-console.log('ABIERTO EN ', process.env.PORT)
+app.listen(PORT)
+console.log('ABIERTO EN ', PORT)
