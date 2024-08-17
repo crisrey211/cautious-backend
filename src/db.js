@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import { DBHOST } from './config'
+import { DBHOST } from './config.js'
 
 export const connectDB = async () => {
     try {
